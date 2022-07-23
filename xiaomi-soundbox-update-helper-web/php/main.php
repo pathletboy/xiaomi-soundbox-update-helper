@@ -207,7 +207,7 @@ function push_firmware($get_arr){
 	//$data_string = json_encode($data);
 	//print_r($data_string);
 
-    $url = "http://api2.mina.mi.com/remote/ota/v2";
+    $url = "https://api2.mina.mi.com/remote/ota/v2";
 	$ch = curl_init(); 
 
 	curl_setopt($ch, CURLOPT_URL, $url); 

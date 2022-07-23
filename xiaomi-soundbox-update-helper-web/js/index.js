@@ -12,7 +12,7 @@ var nodeSize = 0;
 var currNodeIndex = 0;
 
 $(document).ready(() => {
-    getFirmwares();
+    // getFirmwares();
     $('#pushBtn').click(function (e) {
         if (username != "" && DEVICEID != "" && SN != "" && currFirmware != undefined && currChoice != undefined) {
             push(currFirmware.name, currFirmware.hardware, currFirmware.type, currFirmware.version, currFirmware.link, currFirmware.hash, currFirmware.extra, currFirmware.batch);
@@ -182,9 +182,11 @@ function deviceChoice(deviceId, sn, hardware) {
     DEVICEID = deviceId;
     SN = sn;
     HARDWARE = hardware;
+    console.log(hardware);
+    getFirmwares(hardware);
 }
 
-function getFirmwares() {
+function getFirmwares(hardware) {
     var firmwareTable = $('#firmwareTable tbody');
     firmwareTable.html('');
 
@@ -197,6 +199,9 @@ function getFirmwares() {
             firmwares = data;
             console.log(firmwares);
             for (let i = 0; i < firmwares.length; i++) {
+                if (firmwares[i].hardware !== hardware) {
+                    continue
+                }
                 let firmwareItem = $(`
                     <tr>
                         <td>` + firmwares[i].name + `</td>

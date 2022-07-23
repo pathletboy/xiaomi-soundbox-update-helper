@@ -4,7 +4,12 @@ body {
 
 #content {
     margin: 0 auto;
-    max-width: 550px;
+    max-width: 960px;
+}
+
+.panel-body#loginform {
+    margin: 0 auto;
+    max-width: 500px;
 }
 
 #nav {
