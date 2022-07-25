@@ -57,10 +57,10 @@
 	"name": "小米Pro8",
     "hardware": "X08A",
 	"type": "测试版不可回退，谨慎推送！！！",
-	"version": "2.4.7",
-  "link": "https://cdn.cnbj1.fds.api.mi-img.com/xiaoqiang/rom/x08a/payload_2.4.7_a6ba9.bin",
-  "extra": "{\"FILE_HASH\":\"cSaIxKzo/Bzugp/GuOPy1I3pt/2EddaaZSdn5VjIquE=\",\"FILE_SIZE\":\"757240253\",\"METADATA_HASH\":\"OCoStaCrBpQnORWEiyl2LzCzWusdw6BoBjNdE/gQ2+Y=\",\"METADATA_SIZE\":\"72382\"}",
-  "hash": "c76f1998839b80c3e5d189cb6f3a6ba9"
+	"version": "2.4.8",
+  "link": "https://cdn.cnbj1.fds.api.mi-img.com/xiaoqiang/rom/x08a/payload_2.4.8_9f3f7.bin",
+  "extra": "{\"FILE_HASH\":\"3TxQ8f5t5OEOkRBUjiZShnBdKDeyGaygQaZ0TjscNLY=\",\"FILE_SIZE\":\"757224335\",\"METADATA_HASH\":\"idUHx9z7x3Csx4/esYd3sBzDoM9tTc8Hh4tp7z66mCY=\",\"METADATA_SIZE\":\"72383\"}",
+  "hash": "c275b01d1561a357bce94635c969f3f7"
 },
   {
 		"name": "Redmi8",
@@ -120,10 +120,10 @@
 	"name": "Redmi8",
 	"hardware": "X08C",
 	"type": "测试版不可回退，谨慎推送！！！",
-	"version": "2.4.7",
-  "link": "https://cdn.cnbj1.fds.api.mi-img.com/xiaoqiang/rom/x08c/payload_2.4.7_431d4.bin",
-  "extra": "{\"FILE_HASH\":\"cK/JFKR9BUoAhkFU7Ab1oF9lAqnw1RSYRMYj3RZoGkE=\",\"FILE_SIZE\":\"757815175\",\"METADATA_HASH\":\"JitbTqRNoEPh1SgQpZU8NZaiUf7NyjyE98W9oEo+Ayg=\",\"METADATA_SIZE\":\"72380\"}",
-  "hash": "1cc1eefb8cd342ea7855e0021bc431d4"
+	"version": "2.4.8",
+  "link": "https://cdn.cnbj1.fds.api.mi-img.com/xiaoqiang/rom/x08c/payload_2.4.8_d199f.bin",
+  "extra": "{\"FILE_HASH\":\"ujZtT05KZ4HrTrT7H7WQ5JZx6KV8mZ/D+JysnAZbpf0=\",\"FILE_SIZE\":\"757821479\",\"METADATA_HASH\":\"HejE/Imn9dtP6fj4eUnaDuA49N9vjyYiK4e/g2kNmXk=\",\"METADATA_SIZE\":\"72380\"}",
+  "hash": "9beea14642381f2be544eb8cebed199f"
 },
 {
 		"name": "RedmiPro8",
@@ -182,10 +182,10 @@
 	"name": "RedmiPro8",
 	"hardware": "X08E",
 	"type": "测试版不可回退，谨慎推送！！！",
-	"version": "2.4.7",
-  "link": "https://cdn.cnbj1.fds.api.mi-img.com/xiaoqiang/rom/x08e/payload_2.4.7_1f82d.bin",
-  "extra": "{\"FILE_HASH\":\"e46CoDSXt/6xSaJR3LVrq64OKg264JnWudJr42Fe5oM=\",\"FILE_SIZE\":\"771497016\",\"METADATA_HASH\":\"bozCGO4aFUfj8hhneZ0X4VInRzISC1aNEhYGRiNZL38=\",\"METADATA_SIZE\":\"51405\"}",
-  "hash": "913c5951797e091db35cb3470081f82d"
+	"version": "2.4.8",
+  "link": "https://cdn.cnbj1.fds.api.mi-img.com/xiaoqiang/rom/x08e/payload_2.4.8_b4ca1.bin",
+  "extra": "{\"FILE_HASH\":\"QIKgFxqdhW2Qbge8P3rhNavECtR4kWJ8CjAW5X4CRGM=\",\"FILE_SIZE\":\"771493063\",\"METADATA_HASH\":\"omAfsryyne9CNEpDD4npuUtUUMVzBy1y0N1+qi3D+Kw=\",\"METADATA_SIZE\":\"51405\"}",
+  "hash": "f54e3bd92c3bc7cd39a29abc1d3b4ca1"
 },
 	 {
 		"name": "小米LX04",
@@ -205,6 +205,15 @@
 		"extra": "{\"FILE_HASH\":\"j7sskixYqekw6RMiRt9Y2XcccLzWP+eIqZFzwQUHndI=\",\"FILE_SIZE\":\"498945685\",\"METADATA_HASH\":\"gqDBlMhYRjD/dAW0U7I6vBIxkS0Ka227B4wUbBWm/0g=\",\"METADATA_SIZE\":\"33211\"}",
 		"hash": "8ed8bfd40f49eaae0dfe6755195e161d"
 	},
+	{
+	"name": "小米LX04",
+	"hardware": "LX04",
+	"type": "测试版整包",
+	"version": "2.37.64",
+  "link": "https://cdn.cnbj1.fds.api.mi-img.com/xiaoqiang/rom/lx04/payload_2.37.64_7e4c6.bin",
+  "hash": "fc25cdcb55ebf97880baf099fdd7e4c6",
+  "extra": "{\"FILE_HASH\": \"hooJjpfDrZ66QeXg6tHUeh1uUGA3qX3BIJnAvMETCWo=\",\"FILE_SIZE\": \"509541741\",\"METADATA_HASH\": \"KZvQ+ssXxjDlnthbf6CaZ8Ta6UQtoq+KRcXGuTo2Uks=\",\"METADATA_SIZE\": \"33332\"}"
+},
 	 {
 	"name": "Xiaomi智能家庭屏10",
 	"hardware": "X10A",
