@@ -1,26 +1,26 @@
 <?php
 
-function get_sign()
-{
-	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, "https://account.xiaomi.com/pass/serviceLogin?sid=micoapi&_json=true");
-	curl_setopt($ch, CURLOPT_HEADER, true);
-	curl_setopt($ch, CURLINFO_HEADER_OUT, TRUE);
-	curl_setopt($ch, CURLOPT_POST, false);
-	//curl_setopt($ch, CURLOPT_HTTPHEADER, array('Cookie: deviceId=DD61C2E6F186DC6D; sdkVersion=iOS-3.2.7', 'User-Agent: MISoundBox/1.4.0 iosPassportSDK/iOS-3.2.7 iOS/11.2.5','Accept-Language: zh-cn','Connection: keep-alive'));
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	$output = '&&&START&&&{"sid":"micoapi","serviceParam":"{\"checkSafePhone\":false}","desc":"登录验证失败","location":null,"captchaUrl":null,"callback":"https://api.mina.mi.com/sts","code":70016,"qs":"%3Fsid%3Dmicoapi%26_json%3Dtrue","_sign":"xkI9k6Y7vcHJBpsjJjsSqsog7cE="}';
-	//$output = curl_exec($ch); 
-	curl_close($ch);
-	preg_match('/_sign":"(.*?)"/', $output, $matches, PREG_OFFSET_CAPTURE);
-	if (!isset($matches[1])) {
-		return '';
-	}
-	return $matches[1][0];
-}
+// function get_sign()
+// {
+// 	$ch = curl_init();
+// 	curl_setopt($ch, CURLOPT_URL, "https://account.xiaomi.com/pass/serviceLogin?sid=micoapi&_json=true");
+// 	curl_setopt($ch, CURLOPT_HEADER, true);
+// 	curl_setopt($ch, CURLINFO_HEADER_OUT, TRUE);
+// 	curl_setopt($ch, CURLOPT_POST, false);
+// 	//curl_setopt($ch, CURLOPT_HTTPHEADER, array('Cookie: deviceId=DD61C2E6F186DC6D; sdkVersion=iOS-3.2.7', 'User-Agent: MISoundBox/1.4.0 iosPassportSDK/iOS-3.2.7 iOS/11.2.5','Accept-Language: zh-cn','Connection: keep-alive'));
+// 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+// 	$output = '&&&START&&&{"sid":"micoapi","serviceParam":"{\"checkSafePhone\":false}","desc":"登录验证失败","location":null,"captchaUrl":null,"callback":"https://api.mina.mi.com/sts","code":70016,"qs":"%3Fsid%3Dmicoapi%26_json%3Dtrue","_sign":"xkI9k6Y7vcHJBpsjJjsSqsog7cE="}';
+// 	//$output = curl_exec($ch); 
+// 	curl_close($ch);
+// 	preg_match('/_sign":"(.*?)"/', $output, $matches, PREG_OFFSET_CAPTURE);
+// 	if (!isset($matches[1])) {
+// 		return '';
+// 	}
+// 	return $matches[1][0];
+// }
 
 
-function serviceLoginAuth2($user, $pass, $_sign)
+function serviceLoginAuth2($user, $pass)
 {
 	//这步有可能会验证验证码,一般不会
 	$data = "_json=true&sid=micoapi&user=$user&hash=$pass";
@@ -38,8 +38,8 @@ function serviceLoginAuth2($user, $pass, $_sign)
 	$outhead = curl_getinfo($ch);
 	curl_close($ch);
 	preg_match('/location":"(.*?)"/', $output, $matches, PREG_OFFSET_CAPTURE);
-	if (!isset($matches[1])) {
-		echo $output;
+	if (count($matches) == 1 || $matches[1][0] == '') {
+		// echo $output;
 		return '';
 	}
 	$result['location'] = $matches[1][0];
@@ -138,11 +138,14 @@ function speech($user, $pass, $text)
 	}
 
 	if (!$success) {
-		$_sign = get_sign();
+		// $_sign = get_sign();
 		//if ($_sign == '') continue;
-		$session = serviceLoginAuth2($user, $pass, $_sign);
+		$session = serviceLoginAuth2($user, $pass);
 		//if ($session == '') continue;
-
+		if ($session == '') {
+			echo '';
+			return;
+		}
 		//print_r($session);
 
 		$clientSign = serviceToken($session['nonce'], $session['ssecurity']);
